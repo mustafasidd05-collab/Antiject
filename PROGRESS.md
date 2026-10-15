@@ -1,11 +1,12 @@
 # PROGRESS.md
 
 ## Current Status
-- **Current Phase:** Phase 5 - Deployment & Final Release (Approval Gate: Awaiting Owner Approval for First Production Deploy)
+- **Current Phase:** Phase 5 - Completed & Released (`v1.0.0`)
 - **Iteration Count:** 1
 - **Last Failing Check:** None (All tests, linter, builds, and browser checks green)
-- **Active Role:** Deployer / Lead Orchestrator
-- **Preview Server URL:** `http://localhost:4173/` (Live & Verified)
+- **Active Role:** Lead Orchestrator
+- **Live Preview URL:** `http://localhost:4173/` (Verified and smoke-tested)
+- **Git State:** Clean `main`, tagged `v1.0.0`
 
 ---
 
