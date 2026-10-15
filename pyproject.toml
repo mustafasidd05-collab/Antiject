@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promptshield"
+version = "0.1.0"
+description = "A 3-layer prompt injection firewall for AI agents featuring regex/steganography rules, Gemma LLM judge, and safe delimiter sanitization."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "PromptShield Team"}
+]
+dependencies = [
+    "google-genai>=1.0.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "pypdf>=4.0.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+]
+ui = [
+    "streamlit>=1.35.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+markers = [
+    "live: marks tests that require a live Google GenAI API key (deselect with '-m \"not live\"')",
+]

@@ -1,0 +1,13 @@
+CYBERSECURITY INSIGHTS: DEFENDING AGAINST INDIRECT PROMPT INJECTION
+Author: Security Engineering Team | Published: October 2026
+
+Indirect prompt injection has emerged as one of the most critical security challenges facing production AI agents. Unlike direct jailbreaks where a user attempts to subvert an LLM via chat, indirect injections occur when an agent reads untrusted third-party data — such as customer emails, PDF invoices, or web scrapes — that contain embedded instructions.
+
+Common attacker vectors include command phrases like "ignore previous instructions", role hijacking such as "you are now in developer mode", and steganographic tricks like zero-width Unicode characters or hidden HTML comments. When an agent processes this text without isolation, it often executes the attacker's embedded directives, leading to unauthorized tool invocations and confidential data leaks.
+
+To protect agentic pipelines, security teams must deploy layered defenses:
+1. Fast heuristic scanners to intercept known patterns and invisible characters.
+2. An isolated LLM judge to classify intent and quote suspicious substrings.
+3. Strict delimiter wrapping with defensive tags like <untrusted_data> to enforce data-instruction separation.
+
+By implementing defense-in-depth, organizations can significantly raise the cost of attacks and safeguard autonomous AI agents.
