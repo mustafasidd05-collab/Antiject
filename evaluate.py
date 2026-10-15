@@ -128,7 +128,7 @@ def run_benchmark():
     firewall = PromptShield(policy=Policy.BALANCED, judge=judge, scanner=scanner)
 
     print("=" * 75)
-    print("PromptShield 3-Config Benchmark Evaluation")
+    print("Antiject 3-Config Benchmark Evaluation")
     print(f"Total Samples: {len(attacks)} Attacks, {len(benign)} Benign")
     if judge_is_live:
         print(f"Active Live Model: {model_display}")

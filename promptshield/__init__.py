@@ -14,6 +14,7 @@ from promptshield.judge import BaseJudge, GemmaJudge, MockJudge
 from promptshield.firewall import (
     PromptShield,
     Firewall,
+    Antiject,
     scan,
     scan_file,
     agent_system_note,
@@ -30,6 +31,7 @@ from promptshield.loaders import (
 
 __version__ = "0.1.0"
 __all__ = [
+    "Antiject",
     "PromptShield",
     "Firewall",
     "scan",

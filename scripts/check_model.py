@@ -17,12 +17,12 @@ def get_api_key() -> str | None:
 def check_models():
     api_key = get_api_key()
     print("=" * 60)
-    print("PromptShield Model Discovery & Verification")
+    print("Antiject Model Discovery & Verification")
     print("=" * 60)
     
     if not api_key:
         print("\n[!] No GEMINI_API_KEY or GOOGLE_API_KEY found.")
-        print("    -> PromptShield will run in 'MockJudge (Local Simulation - No API Key)' mode.")
+        print("    -> Antiject will run in 'MockJudge (Local Simulation - No API Key)' mode.")
         print("    -> To connect to live Gemma models:")
         print("       1. Copy .env.example to .env: copy .env.example .env")
         print("       2. Add your Google AI Studio API key in .env")

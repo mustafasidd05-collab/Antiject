@@ -3,14 +3,14 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "promptshield"
+name = "antiject"
 version = "0.1.0"
 description = "A 3-layer prompt injection firewall for AI agents featuring regex/steganography rules, Gemma LLM judge, and safe delimiter sanitization."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "PromptShield Team"}
+    {name = "Team Trinity"}
 ]
 dependencies = [
     "google-genai>=1.0.0",

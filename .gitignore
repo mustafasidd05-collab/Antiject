@@ -39,3 +39,14 @@ htmlcov/
 # OS artifacts
 .DS_Store
 Thumbs.db
+demo/
+evidence/
+
+# other
+AGENTS.md
+PLAN.md
+
+PROGRESS.md
+
+# Documentation
+scripts/
