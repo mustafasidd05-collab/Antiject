@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-15 12:43:07",
+  "timestamp": "2026-10-15 18:32:51",
   "is_live_gemma": false,
   "model_used": "MockJudge (Local Simulation - No API Key)",
   "sample_count": {
@@ -18,7 +18,7 @@
       "precision": 0.9,
       "recall": 0.9,
       "f1": 0.9,
-      "avg_latency_ms": 0.23,
+      "avg_latency_ms": 0.2,
       "missed_attacks": [
         {
           "id": "attack-02",
@@ -160,7 +160,7 @@
       "precision": 0.833,
       "recall": 1.0,
       "f1": 0.909,
-      "avg_latency_ms": 0.28,
+      "avg_latency_ms": 0.27,
       "missed_attacks": [],
       "false_alarms": [
         {

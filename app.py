@@ -1,6 +1,6 @@
 """
-PromptShield Interactive Demo App.
-Side-by-side comparison: Unprotected Victim Agent vs Protected Agent with PromptShield.
+Antiject Interactive Demo App.
+Side-by-side comparison: Unprotected Victim Agent vs Protected Agent with Antiject.
 """
 
 import json
@@ -8,7 +8,7 @@ import os
 import streamlit as st
 from dotenv import load_dotenv
 
-from promptshield.firewall import PromptShield, Policy, escape_untrusted_delimiters, wrap_untrusted_data
+from promptshield.firewall import Antiject, PromptShield, Policy, escape_untrusted_delimiters, wrap_untrusted_data
 from promptshield.judge import GemmaJudge, MockJudge
 from promptshield.scanner import Scanner
 from promptshield.victim_agent import VictimAgent
@@ -18,7 +18,7 @@ load_dotenv()
 
 # Page Configuration
 st.set_page_config(
-    page_title="PromptShield - Prompt-Injection Firewall",
+    page_title="Antiject - Prompt-Injection Firewall",
     page_icon="🛡️",
     layout="wide",
 )
@@ -72,7 +72,8 @@ def get_sample_content(filename: str) -> str:
     return load_text(path)
 
 # ----------------- SIDEBAR CONFIGURATION -----------------
-st.sidebar.title("🛡️ PromptShield Settings")
+st.sidebar.title("🛡️ Antiject Settings")
+st.sidebar.caption("By Team Trinity")
 
 # API Key handling
 env_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or ""
@@ -178,8 +179,8 @@ else:
     victim = VictimAgent(firewall=firewall, live_model=False)
 
 # ----------------- MAIN UI BANNER -----------------
-st.title("PromptShield: Prompt-Injection Firewall for AI Agents")
-st.markdown("Defending autonomous AI agents against indirect prompt injection via a **3-Layer Defense-in-Depth** pipeline.")
+st.title("Antiject: Prompt-Injection Firewall for AI Agents")
+st.markdown("**Team Trinity** | Defending autonomous AI agents against indirect prompt injection via a **3-Layer Defense-in-Depth** pipeline.")
 
 # Active Model Status Banner
 col_status1, col_status2 = st.columns([3, 1])
@@ -228,8 +229,8 @@ if trigger_scan or doc_text:
 
     # ----------------- RIGHT COLUMN: PROTECTED -----------------
     with right_col:
-        st.subheader("🛡️ Protected with PromptShield")
-        st.caption("PromptShield intercepts and sanitizes payload before the agent processes it.")
+        st.subheader("🛡️ Protected with Antiject")
+        st.caption("Antiject intercepts and sanitizes payload before the agent processes it.")
 
         protected_result = victim.run_protected(doc_text)
         verdict = protected_result.get("verdict")

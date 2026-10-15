@@ -222,8 +222,9 @@ class PromptShield:
         )
 
 
-# Alias Firewall for ergonomic import
+# Alias Firewall and Antiject for ergonomic import
 Firewall = PromptShield
+Antiject = PromptShield
 
 # Global default instance
 _default_firewall: Optional[PromptShield] = None
