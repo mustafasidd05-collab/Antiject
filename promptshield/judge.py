@@ -42,6 +42,20 @@ Text to inspect:
 </inspect_data>
 """
 
+INSPECT_CLOSING_PATTERN = re.compile(r'<\s*/\s*inspect_data\s*>', re.IGNORECASE)
+INSPECT_OPENING_PATTERN = re.compile(r'<\s*inspect_data(?:\s+[^>]*)?>', re.IGNORECASE)
+
+def escape_inspect_delimiters(text: str) -> str:
+    """
+    Escapes opening and closing <inspect_data> tags inside untrusted text
+    to prevent prompt breakout attacks targeting the Judge model.
+    """
+    if not text:
+        return ""
+    escaped = INSPECT_CLOSING_PATTERN.sub("&lt;/inspect_data&gt;", text)
+    escaped = INSPECT_OPENING_PATTERN.sub("&lt;inspect_data&gt;", escaped)
+    return escaped
+
 
 def parse_json_defensively(raw_response: str) -> dict:
     """
@@ -313,7 +327,8 @@ class GemmaJudge(BaseJudge):
         )
 
     def _evaluate_single_chunk(self, chunk: str, full_text: str) -> JudgeResult:
-        user_prompt = USER_JUDGE_PROMPT_TEMPLATE.format(content=chunk)
+        safe_chunk = escape_inspect_delimiters(chunk)
+        user_prompt = USER_JUDGE_PROMPT_TEMPLATE.format(content=safe_chunk)
         start_time = time.perf_counter()
 
         last_error = None

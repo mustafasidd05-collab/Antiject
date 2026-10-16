@@ -153,6 +153,16 @@ export function wrapUntrustedData(text: string): string {
 }
 
 /**
+ * Escapes both opening and closing <inspect_data> tags inside text sent to judge
+ */
+export function escapeInspectDelimiters(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/<\s*\/\s*inspect_data\s*>/gi, '&lt;/inspect_data&gt;')
+    .replace(/<\s*inspect_data(?:\s+[^>]*)?>/gi, '&lt;inspect_data&gt;');
+}
+
+/**
  * Layer 1 Scanner: Fast deterministic inspection (<0.2ms)
  */
 export function scanLayer1(text: string): { matches: RuleMatch[]; latencyMs: number } {
