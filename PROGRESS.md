@@ -45,6 +45,9 @@
 ### Phase 5: Deployment & Release (At Approval Gate)
 - [x] Production static bundle built in `web/dist/`
 - [x] Live preview server running and smoke-tested on `http://localhost:4173/`
+- [x] Streamlit app (`app.py`) upgraded to Nothing Design Language (monochrome, typographic, industrial, Doto/Space Grotesk/Space Mono, OLED black, 16-segment discrete progress bars)
+- [x] Installed `nothing-design` skill in `.agents/skills/nothing-design/` and globally
+- [x] Tested, reviewed, approved by user, committed, merged to `main`, and pushed to `origin/main`
 - [ ] First Production Deploy Approval Gate (Awaiting human owner "approved")
 - [ ] Tag release `v1.0.0` and finalize release report
 
